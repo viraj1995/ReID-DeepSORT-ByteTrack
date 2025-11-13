@@ -1,8 +1,5 @@
 # ReID-DeepSORT-ByteTrack
 
-[![Python](https://img.shields.io/badge/Python-3.8%2B-blue.svg)](https://www.python.org/)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-
 **An experimental framework for accurately identifying objects re-appearing in video frames within a certain time period.**
 
 This project implements a person detection pipeline using YOLOv8, designed as a foundation for experimenting with re-identification techniques like DeepSORT and ByteTrack.
