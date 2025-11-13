@@ -1,0 +1,29 @@
+# Example configuration for testing
+# Copy this to config/config.yaml and modify as needed
+
+model:
+  name: "yolov8n.pt"
+  path: "models/"
+  device: "cpu"
+  confidence_threshold: 0.5
+  iou_threshold: 0.45
+
+video:
+  input_path: "data/sample_video.mp4"  # Update with your video path
+  output_path: "outputs/result.mp4"
+  output_width: 640
+  codec: "mp4v"
+
+detection:
+  target_classes: [0]  # 0 = person
+  draw_boxes: true
+  draw_labels: true
+  box_color: [0, 255, 0]
+  box_thickness: 2
+  label_font_scale: 0.5
+  label_thickness: 2
+
+performance:
+  batch_size: 1
+  verbose: false
+  show_progress: true

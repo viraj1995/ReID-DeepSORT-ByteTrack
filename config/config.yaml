@@ -1,0 +1,32 @@
+# Configuration file for ReID-DeepSORT-ByteTrack experiment
+
+# Model Configuration
+model:
+  name: "yolov8n.pt"
+  path: "models/"  # Path to model weights
+  device: "cpu"  # Options: cpu, cuda, mps
+  confidence_threshold: 0.5
+  iou_threshold: 0.45
+
+# Video Processing Configuration
+video:
+  input_path: "data/2-rotated.mp4"  # Path to input video
+  output_path: "outputs/output_low_res.mp4"  # Path to output video
+  output_width: 640  # Width of output video (maintains aspect ratio)
+  codec: "mp4v"  # Video codec (mp4v, avc1, etc.)
+
+# Detection Configuration
+detection:
+  target_classes: [0]  # COCO class IDs to detect (0 = person)
+  draw_boxes: true
+  draw_labels: true
+  box_color: [0, 255, 0]  # BGR format
+  box_thickness: 2
+  label_font_scale: 0.5
+  label_thickness: 2
+
+# Performance Configuration
+performance:
+  batch_size: 1
+  verbose: false  # Show detailed inference logs
+  show_progress: true  # Display progress bar
