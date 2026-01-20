@@ -168,7 +168,6 @@ This project serves as a foundation for more advanced tracking experiments:
 - [ ] **Multi-Object Tracking**: Track multiple persons across frames
 - [ ] **Re-ID Metrics**: Evaluate re-identification accuracy
 - [ ] **Real-time Processing**: Optimize for live video streams
-- [ ] **Custom Training**: Fine-tune models on specific datasets
 
 ## 🤝 Contributing
 
