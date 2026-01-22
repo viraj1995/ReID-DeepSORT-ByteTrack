@@ -45,7 +45,7 @@ ReID-DeepSORT-ByteTrack/
 └── README.md            # This file
 ```
 
-## 🚀 Installation
+## Installation
 
 ### Prerequisites
 
@@ -81,7 +81,7 @@ ReID-DeepSORT-ByteTrack/
    # Or manually download from: https://github.com/ultralytics/assets/releases
    ```
 
-## ⚡ Quick Start
+## Quick Start
 
 1. **Place your video** in the `data/` directory
    ```bash
@@ -129,7 +129,7 @@ detection:
   box_thickness: 2
 ```
 
-## 💻 Usage
+## Usage
 
 ### Basic Usage
 
@@ -169,7 +169,7 @@ This project serves as a foundation for more advanced tracking experiments:
 - [ ] **Re-ID Metrics**: Evaluate re-identification accuracy
 - [ ] **Real-time Processing**: Optimize for live video streams
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request. For major changes:
 
@@ -180,13 +180,13 @@ Contributions are welcome! Please feel free to submit a Pull Request. For major 
 5. Open a Pull Request
 
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - [Ultralytics YOLOv8](https://github.com/ultralytics/ultralytics) for the detection framework
 - [DeepSORT](https://github.com/nwojke/deep_sort) for tracking inspiration
 - [ByteTrack](https://github.com/ifzhang/ByteTrack) for association techniques
 
-## 📧 Contact
+## Contact
 
 **Viraj** - [@viraj1995](https://github.com/viraj1995)
 
