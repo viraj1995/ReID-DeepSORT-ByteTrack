@@ -159,7 +159,7 @@ model:
   device: "cuda"  # Use GPU if available
 ```
 
-## 🔮 Future Work
+## Future Work
 
 This project serves as a foundation for more advanced tracking experiments:
 
