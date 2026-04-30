@@ -1,0 +1,21 @@
+# Configuration file for ReID-DeepSORT-ByteTrack experiment
+
+model:
+  name: "yolov8n.pt"
+  device: "cpu"
+  confidence_threshold: 0.5
+
+video:
+  input_path: "data/2-rotated.mp4"
+  output_path: "outputs/output_low_res.mp4"
+  output_width: 640
+  codec: "mp4v"
+
+detection:
+  target_classes: [0]
+  draw_boxes: true
+  draw_labels: true
+  box_color: [0, 255, 0]
+  box_thickness: 2
+  label_font_scale: 0.5
+  label_thickness: 2
