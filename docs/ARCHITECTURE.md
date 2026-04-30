@@ -33,21 +33,20 @@ Handles loading and validation of YAML configuration files.
 
 **Key Functions:**
 - `load_config()`: Loads YAML configuration
-- `validate_config()`: Validates required parameters
-- `get_model_path()`: Resolves model file paths
+- `validate_config()`: Validates required configuration structure
 
 ### 2. Person Detector (`detector.py`)
 
 Wraps YOLOv8 model for person detection with configurable parameters.
 
 **Key Features:**
-- Lazy model loading
 - Confidence thresholding
 - Class filtering
 - Device management (CPU/GPU)
 
 **Methods:**
 - `detect_persons()`: Run detection on a frame
+- `get_class_name()`: Resolve COCO class ID to label
 - `get_model_info()`: Retrieve model metadata
 
 ### 3. Video Processor (`video_processor.py`)
@@ -55,10 +54,12 @@ Wraps YOLOv8 model for person detection with configurable parameters.
 Manages video I/O, frame processing, and annotation.
 
 **Key Features:**
-- Automatic resolution adjustment
+- Detection on original resolution for accuracy
+- Automatic output resolution adjustment
 - Progress tracking
 - Frame annotation (boxes, labels)
 - Statistics reporting
+- Guaranteed resource cleanup on error or interrupt
 
 **Methods:**
 - `process_video()`: Main processing loop
@@ -73,18 +74,22 @@ Orchestrates the entire pipeline with CLI support.
 - Command-line argument parsing
 - Error handling
 - Pipeline initialization
-- User feedback
+- Runtime filesystem checks (video file existence)
 
 ## Data Flow
 
 ```
 Input Video
     ↓
-Load & Resize Frame
+Load Original Frame
     ↓
-YOLO Detection
+YOLO Detection (on original resolution)
     ↓
 Filter by Class & Confidence
+    ↓
+Scale Detections to Output Resolution
+    ↓
+Resize Frame
     ↓
 Annotate Frame
     ↓
@@ -121,7 +126,8 @@ Camera N ─┘
 
 ## Performance Considerations
 
-- **Batch Processing**: Currently frame-by-frame (can be optimized)
+- **Detection Accuracy**: Inference runs on original resolution; only annotations are scaled
 - **Memory Management**: Frames processed sequentially to limit memory
 - **GPU Utilization**: Supports CUDA for accelerated inference
 - **I/O Optimization**: Using OpenCV VideoWriter for efficient encoding
+- **Resource Safety**: Video capture and writer are always released via `try...finally`
